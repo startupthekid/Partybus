@@ -24,6 +24,7 @@
 		EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */; };
 		EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */; };
+		EA1968A51DDC526600C2F95C /* route.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1968A41DDC526600C2F95C /* route.json */; };
 		EA7397311DDC3E900028527E /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397301DDC3E900028527E /* routes.json */; };
 		EA7397331DDC40960028527E /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397321DDC40960028527E /* points.json */; };
 		EA7397371DDC461B0028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
@@ -79,6 +80,7 @@
 		EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinatesTransform.swift; path = Models/CoordinatesTransform.swift; sourceTree = "<group>"; };
 		EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesTransformSpec.swift; sourceTree = "<group>"; };
 		EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
+		EA1968A41DDC526600C2F95C /* route.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = route.json; path = Resources/route.json; sourceTree = "<group>"; };
 		EA7397301DDC3E900028527E /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = Resources/routes.json; sourceTree = "<group>"; };
 		EA7397321DDC40960028527E /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = points.json; path = Resources/points.json; sourceTree = "<group>"; };
 		EA7397361DDC461B0028527E /* Cleanse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cleanse.framework; path = Frameworks/Cleanse.framework; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				EA7397301DDC3E900028527E /* routes.json */,
 				EA7397321DDC40960028527E /* points.json */,
+				EA1968A41DDC526600C2F95C /* route.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1968A51DDC526600C2F95C /* route.json in Resources */,
 				EA7397331DDC40960028527E /* points.json in Resources */,
 				EA7397311DDC3E900028527E /* routes.json in Resources */,
 			);

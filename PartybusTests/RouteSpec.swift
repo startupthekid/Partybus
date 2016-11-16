@@ -18,23 +18,22 @@ class RouteSpec: QuickSpec {
 
         describe("Route") {
 
-            var jsonArray: [[String: AnyObject]] = []
+            var json: [String: Any] = [:]
 
             beforeEach {
                 do {
-                    let resourcePath = URL(fileURLWithPath: Bundle(for: type(of: self)).path(forResource: "routes", ofType: "json")!)
+                    let resourcePath = URL(fileURLWithPath: Bundle(for: type(of: self)).path(forResource: "route", ofType: "json")!)
                     let data = try Data(contentsOf: resourcePath, options: [.mappedIfSafe])
-                    jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]] ?? []
+                    json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] ?? [:]
                 } catch {
-                    fail("unable to parse json file routes.json. failed with error: \(error)")
+                    fail("unable to parse json file route.json. failed with error: \(error)")
                 }
             }
 
-            it("should transform json into a list of arrays") {
-                let routes = jsonArray.map { try! Route(JSON: $0) }
-                expect(routes).toNot(beEmpty())
-                expect(routes).to(haveCount(jsonArray.count))
+            it("should transform a json object into a route object") {
+                expect { try Route(JSON: json) as ImmutableMappable }.toNot(throwError())
             }
+
         }
     }
 }

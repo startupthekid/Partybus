@@ -18,6 +18,7 @@ struct Route: ImmutableMappable {
     let scheduleURI: String
     let active: Bool
     let path: [(Double, Double)]
+    let stops: [Int]
 
     init(map: Map) throws {
         identifier = try map.value("id", using: TransformOf(fromJSON: { "\($0)" }, toJSON: { Int($0 ?? "") }))
@@ -28,6 +29,7 @@ struct Route: ImmutableMappable {
         scheduleURI = try map.value("schedule")
         active = try map.value("active")
         path = try map.value("path", using: CoordinatesTransform())
+        stops = try map.value("stops")
     }
 
 }
