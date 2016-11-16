@@ -5,4 +5,4 @@ before_install:
 - gem install cocoapods
 - pod install
 script:
-- set -o pipefail && xcodebuild test -project Partybus.xcodeproj -scheme Partybus -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s" ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Partybus.xcworkspace -scheme Partybus -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s" ONLY_ACTIVE_ARCH=NO | xcpretty
