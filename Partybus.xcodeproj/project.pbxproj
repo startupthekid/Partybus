@@ -23,6 +23,7 @@
 		EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */; };
 		EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */; };
 		EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */; };
 		EA7397311DDC3E900028527E /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397301DDC3E900028527E /* routes.json */; };
 		EA7397331DDC40960028527E /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397321DDC40960028527E /* points.json */; };
 		EA7397371DDC461B0028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
@@ -77,6 +78,7 @@
 		EA0E03911DDC33D500003BB3 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Route.swift; path = Models/Route.swift; sourceTree = "<group>"; };
 		EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinatesTransform.swift; path = Models/CoordinatesTransform.swift; sourceTree = "<group>"; };
 		EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesTransformSpec.swift; sourceTree = "<group>"; };
+		EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		EA7397301DDC3E900028527E /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = Resources/routes.json; sourceTree = "<group>"; };
 		EA7397321DDC40960028527E /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = points.json; path = Resources/points.json; sourceTree = "<group>"; };
 		EA7397361DDC461B0028527E /* Cleanse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cleanse.framework; path = Frameworks/Cleanse.framework; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */,
+				EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */,
 				EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
