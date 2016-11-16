@@ -1,5 +1,4 @@
 language: objective-c
-cache: cocoapods
 podfile: Podfile
 before_install:
 - gem install cocoapods
