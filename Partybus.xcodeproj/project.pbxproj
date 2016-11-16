@@ -22,6 +22,7 @@
 		EA0E03921DDC33D500003BB3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03911DDC33D500003BB3 /* Route.swift */; };
 		EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */; };
 		EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */; };
+		EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA7397311DDC3E900028527E /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397301DDC3E900028527E /* routes.json */; };
 		EA7397331DDC40960028527E /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397321DDC40960028527E /* points.json */; };
 		EA7397371DDC461B0028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
@@ -40,6 +41,20 @@
 			remoteInfo = Partybus;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA1968A11DDC4B5600C2F95C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		15E7F7D424E2845E90019CBA /* Pods-Partybus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partybus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partybus/Pods-Partybus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +254,7 @@
 				EAE098381DDC1CDE007A1065 /* Resources */,
 				7C1FDB0EB428FAA0CF50478A /* [CP] Embed Pods Frameworks */,
 				2A27A8E147615B689F330691 /* [CP] Copy Pods Resources */,
+				EA1968A11DDC4B5600C2F95C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
