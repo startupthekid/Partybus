@@ -27,7 +27,6 @@
 		EA1968A51DDC526600C2F95C /* route.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1968A41DDC526600C2F95C /* route.json */; };
 		EA1968A81DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */; };
 		EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */; };
-		EA1968AE1DDC6C1300C2F95C /* Alamofire+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */; };
 		EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AF1DDCC50D00C2F95C /* Bus.swift */; };
 		EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968B11DDCC66E00C2F95C /* Stop.swift */; };
 		EA7397311DDC3E900028527E /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397301DDC3E900028527E /* routes.json */; };
@@ -88,7 +87,6 @@
 		EA1968A41DDC526600C2F95C /* route.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = route.json; path = Resources/route.json; sourceTree = "<group>"; };
 		EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Rx+AlamofireObjectMapper.swift"; path = "Extensions/Rx+AlamofireObjectMapper.swift"; sourceTree = "<group>"; };
 		EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "View Models/MapViewModel.swift"; sourceTree = "<group>"; };
-		EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire+File.swift"; path = "Extensions/Alamofire+File.swift"; sourceTree = "<group>"; };
 		EA1968AF1DDCC50D00C2F95C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bus.swift; path = Models/Bus.swift; sourceTree = "<group>"; };
 		EA1968B11DDCC66E00C2F95C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Models/Stop.swift; sourceTree = "<group>"; };
 		EA7397301DDC3E900028527E /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = Resources/routes.json; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */,
-				EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +297,7 @@
 				7C1FDB0EB428FAA0CF50478A /* [CP] Embed Pods Frameworks */,
 				2A27A8E147615B689F330691 /* [CP] Copy Pods Resources */,
 				EA1968A11DDC4B5600C2F95C /* Embed Frameworks */,
+				68F388B10C0F5F38C2916892 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -428,6 +426,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Partybus/Pods-Partybus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		68F388B10C0F5F38C2916892 /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
+		};
 		7C1FDB0EB428FAA0CF50478A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,7 +518,6 @@
 				EA0E037A1DDC1F5D00003BB3 /* AppDelegateProxy.swift in Sources */,
 				EA0E03761DDC1E3200003BB3 /* MapViewController.swift in Sources */,
 				EA0E038B1DDC259400003BB3 /* AppCoordinator.swift in Sources */,
-				EA1968AE1DDC6C1300C2F95C /* Alamofire+File.swift in Sources */,
 				EA0E03831DDC250700003BB3 /* WindowModule.swift in Sources */,
 				EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */,
 				EA0E038D1DDC25D300003BB3 /* AppDelegate.swift in Sources */,
@@ -652,7 +663,6 @@
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Partybus/Info.plist;
@@ -673,7 +683,6 @@
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Partybus/Info.plist;
