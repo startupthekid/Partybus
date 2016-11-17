@@ -15,8 +15,7 @@ target 'Partybus' do
   pod 'RxSugar'
   pod 'RxCocoa'
   pod 'Alamofire'
-  pod 'Moya'
-  
+
   # Pods for Partybus
 
   target 'PartybusTests' do
