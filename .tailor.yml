@@ -1,0 +1,9 @@
+include:
+    - Partybus
+exclude:
+    - '**Spec.swift'
+    - Partybus/Pods       # Ignore Swift files under "Source/Pods/"
+
+except:
+  - trailing-whitespace
+  - lower-camel-case
