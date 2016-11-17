@@ -8,6 +8,9 @@
 
 import UIKit
 import Alamofire
+import RxSwift
+import RxSugar
+import RxCocoa
 import RxAlamofire
 
 class MapCoordinator: BaseCoordinator {
@@ -17,6 +20,10 @@ class MapCoordinator: BaseCoordinator {
     private lazy var mapViewController: MapViewController = {
         return MapViewController()
     }()
+
+    // MARK: - View Model
+
+    private let viewModel = MapViewModel()
 
     // MARK: - Queues
 
@@ -31,16 +38,16 @@ class MapCoordinator: BaseCoordinator {
     override func start(_ completion: CoordinatorCompletion?) {
         guard let navigationController = rootViewController as? UINavigationController else { return }
         mapViewController.loadViewIfNeeded()
-
         navigationController.setViewControllers([mapViewController], animated: false)
-        fetchStops()
+        rxs.disposeBag
+            ++ viewModel.routes <~ fetchRoutes().takeUntil(mapViewController.rxs.onDeinit)
         super.start(completion)
     }
 
     // MARK: - Networking
 
-    private func fetchStops() {
-        json(.get, "http://tufts.doublemap.com/map/v2/routes")
+    private func fetchRoutes() -> Observable<[Route]> {
+        return Alamofire.SessionManager.default.rx.request(.get, "https://tufts.doublemap.com/map/v2/routes").responseArray()
     }
 
 }
