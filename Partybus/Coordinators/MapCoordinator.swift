@@ -8,7 +8,9 @@
 
 import UIKit
 import Alamofire
-import RxAlamofire
+import ReactiveSwift
+import Moya_ObjectMapper
+import Moya
 
 class MapCoordinator: BaseCoordinator {
 
@@ -17,6 +19,10 @@ class MapCoordinator: BaseCoordinator {
     private lazy var mapViewController: MapViewController = {
         return MapViewController()
     }()
+
+    // MARK: - View Model
+
+    private let viewModel = MapViewModel()
 
     // MARK: - Queues
 
@@ -31,16 +37,15 @@ class MapCoordinator: BaseCoordinator {
     override func start(_ completion: CoordinatorCompletion?) {
         guard let navigationController = rootViewController as? UINavigationController else { return }
         mapViewController.loadViewIfNeeded()
-
         navigationController.setViewControllers([mapViewController], animated: false)
-        fetchStops()
+        viewModel.routes <~ fetchRoutes().flatMapError { _ in .empty }
         super.start(completion)
     }
 
     // MARK: - Networking
 
-    private func fetchStops() {
-        json(.get, "http://tufts.doublemap.com/map/v2/routes")
+    private func fetchRoutes() -> SignalProducer<[Route], Moya.Error> {
+        return Providers.DoubleMapProvider.request(token: .routes).mapArray(Route.self)
     }
 
 }
