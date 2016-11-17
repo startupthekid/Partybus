@@ -25,6 +25,11 @@
 		EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */; };
 		EA1968A51DDC526600C2F95C /* route.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1968A41DDC526600C2F95C /* route.json */; };
+		EA1968A81DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */; };
+		EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */; };
+		EA1968AE1DDC6C1300C2F95C /* Alamofire+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */; };
+		EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AF1DDCC50D00C2F95C /* Bus.swift */; };
+		EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968B11DDCC66E00C2F95C /* Stop.swift */; };
 		EA7397311DDC3E900028527E /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397301DDC3E900028527E /* routes.json */; };
 		EA7397331DDC40960028527E /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397321DDC40960028527E /* points.json */; };
 		EA7397371DDC461B0028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
@@ -81,6 +86,11 @@
 		EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesTransformSpec.swift; sourceTree = "<group>"; };
 		EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		EA1968A41DDC526600C2F95C /* route.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = route.json; path = Resources/route.json; sourceTree = "<group>"; };
+		EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Rx+AlamofireObjectMapper.swift"; path = "Extensions/Rx+AlamofireObjectMapper.swift"; sourceTree = "<group>"; };
+		EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "View Models/MapViewModel.swift"; sourceTree = "<group>"; };
+		EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire+File.swift"; path = "Extensions/Alamofire+File.swift"; sourceTree = "<group>"; };
+		EA1968AF1DDCC50D00C2F95C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bus.swift; path = Models/Bus.swift; sourceTree = "<group>"; };
+		EA1968B11DDCC66E00C2F95C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Models/Stop.swift; sourceTree = "<group>"; };
 		EA7397301DDC3E900028527E /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = Resources/routes.json; sourceTree = "<group>"; };
 		EA7397321DDC40960028527E /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = points.json; path = Resources/points.json; sourceTree = "<group>"; };
 		EA7397361DDC461B0028527E /* Cleanse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cleanse.framework; path = Frameworks/Cleanse.framework; sourceTree = "<group>"; };
@@ -169,6 +179,8 @@
 			children = (
 				EA0E03911DDC33D500003BB3 /* Route.swift */,
 				EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */,
+				EA1968AF1DDCC50D00C2F95C /* Bus.swift */,
+				EA1968B11DDCC66E00C2F95C /* Stop.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -180,6 +192,30 @@
 				EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		EA1968A61DDC5AFC00C2F95C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */,
+				EA1968AD1DDC6C1300C2F95C /* Alamofire+File.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EA1968A91DDC68D100C2F95C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		EA1968AC1DDC6BFB00C2F95C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		EA73972F1DDC3E720028527E /* Resources */ = {
@@ -215,6 +251,9 @@
 		EAE0983C1DDC1CDE007A1065 /* Partybus */ = {
 			isa = PBXGroup;
 			children = (
+				EA1968AC1DDC6BFB00C2F95C /* Networking */,
+				EA1968A91DDC68D100C2F95C /* View Models */,
+				EA1968A61DDC5AFC00C2F95C /* Extensions */,
 				EA0E03901DDC33BE00003BB3 /* Models */,
 				EA0E037F1DDC24A900003BB3 /* Modules */,
 				EA0E03781DDC1F4900003BB3 /* Application */,
@@ -457,16 +496,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */,
+				EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */,
 				EA0E03871DDC256100003BB3 /* CoordinatorProtocol.swift in Sources */,
 				EA0E03851DDC253000003BB3 /* ApplicationProtocol.swift in Sources */,
+				EA1968A81DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift in Sources */,
 				EA0E03921DDC33D500003BB3 /* Route.swift in Sources */,
 				EA0E03811DDC24E500003BB3 /* ApplicationModule.swift in Sources */,
 				EA0E038F1DDC276700003BB3 /* MapCoordinator.swift in Sources */,
 				EA0E037A1DDC1F5D00003BB3 /* AppDelegateProxy.swift in Sources */,
 				EA0E03761DDC1E3200003BB3 /* MapViewController.swift in Sources */,
 				EA0E038B1DDC259400003BB3 /* AppCoordinator.swift in Sources */,
+				EA1968AE1DDC6C1300C2F95C /* Alamofire+File.swift in Sources */,
 				EA0E03831DDC250700003BB3 /* WindowModule.swift in Sources */,
+				EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */,
 				EA0E038D1DDC25D300003BB3 /* AppDelegate.swift in Sources */,
+				EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */,
 				EA0E03891DDC257000003BB3 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
