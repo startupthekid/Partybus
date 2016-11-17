@@ -12,7 +12,7 @@ target 'Partybus' do
   pod 'Moya', '8.0.0-beta.4'
   pod 'Moya/ReactiveCocoa'
   pod 'ReactiveSwift', '1.0.0-alpha.3'
-  # pod 'ReactiveSwift', '1.0.0-alpha.3'
+  pod 'Moya-ObjectMapper'
 
   # Pods for Partybus
 
