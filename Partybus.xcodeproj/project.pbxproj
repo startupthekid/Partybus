@@ -25,7 +25,6 @@
 		EA1968A01DDC4B5600C2F95C /* Cleanse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */; };
 		EA1968A51DDC526600C2F95C /* route.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1968A41DDC526600C2F95C /* route.json */; };
-		EA1968A81DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */; };
 		EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */; };
 		EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AF1DDCC50D00C2F95C /* Bus.swift */; };
 		EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968B11DDCC66E00C2F95C /* Stop.swift */; };
@@ -85,7 +84,6 @@
 		EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesTransformSpec.swift; sourceTree = "<group>"; };
 		EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		EA1968A41DDC526600C2F95C /* route.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = route.json; path = Resources/route.json; sourceTree = "<group>"; };
-		EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Rx+AlamofireObjectMapper.swift"; path = "Extensions/Rx+AlamofireObjectMapper.swift"; sourceTree = "<group>"; };
 		EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "View Models/MapViewModel.swift"; sourceTree = "<group>"; };
 		EA1968AF1DDCC50D00C2F95C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bus.swift; path = Models/Bus.swift; sourceTree = "<group>"; };
 		EA1968B11DDCC66E00C2F95C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Models/Stop.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		EA1968A61DDC5AFC00C2F95C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EA1968A71DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -511,7 +508,6 @@
 				EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */,
 				EA0E03871DDC256100003BB3 /* CoordinatorProtocol.swift in Sources */,
 				EA0E03851DDC253000003BB3 /* ApplicationProtocol.swift in Sources */,
-				EA1968A81DDC5B2200C2F95C /* Rx+AlamofireObjectMapper.swift in Sources */,
 				EA0E03921DDC33D500003BB3 /* Route.swift in Sources */,
 				EA0E03811DDC24E500003BB3 /* ApplicationModule.swift in Sources */,
 				EA0E038F1DDC276700003BB3 /* MapCoordinator.swift in Sources */,
