@@ -6,15 +6,13 @@ target 'Partybus' do
   use_frameworks!
 
   pod 'Mapbox-iOS-SDK'
-  pod 'RxSwift'
   pod 'SnapKit'
-  pod 'Alamofire'
-  pod 'RxAlamofire'
   pod 'ObjectMapper'
-  pod 'AlamofireObjectMapper'
-  pod 'RxSugar'
-  pod 'RxCocoa'
-  pod 'Alamofire'
+  pod 'ReactiveCocoa', '5.0.0-alpha.3'
+  pod 'Moya', '8.0.0-beta.4'
+  pod 'Moya/ReactiveCocoa'
+  pod 'ReactiveSwift', '1.0.0-alpha.3'
+  # pod 'ReactiveSwift', '1.0.0-alpha.3'
 
   # Pods for Partybus
 

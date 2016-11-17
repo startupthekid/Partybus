@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import RxSwift
+import ReactiveSwift
 
 // TODO: Rename this entire class cluster: https://trello.com/b/mY9VZ8Qw/ios
 struct MapViewModel {
 
-    let routes: Variable<[Route]> = Variable([])
+    let routes = MutableProperty<[Route]>([])
 
 }
