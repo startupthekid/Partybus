@@ -49,13 +49,14 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
 extension AppDelegateProxy {
 
     struct Component: Cleanse.RootComponent {
+        
         typealias Root = PropertyInjector<AppDelegateProxy>
 
         static func configure<B: Binder>(binder: B) {
             binder.install(module: ApplicationModule.self)
             binder.bindPropertyInjectionOf(AppDelegateProxy.self).to(injector: AppDelegateProxy.injectProperties)
         }
-        
+
     }
-    
+
 }
