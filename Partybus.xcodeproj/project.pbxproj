@@ -300,6 +300,7 @@
 				7C1FDB0EB428FAA0CF50478A /* [CP] Embed Pods Frameworks */,
 				2A27A8E147615B689F330691 /* [CP] Copy Pods Resources */,
 				EA1968A11DDC4B5600C2F95C /* Embed Frameworks */,
+				68F388B10C0F5F38C2916892 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -427,6 +428,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Partybus/Pods-Partybus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		68F388B10C0F5F38C2916892 /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
 		};
 		7C1FDB0EB428FAA0CF50478A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
