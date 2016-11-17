@@ -31,6 +31,7 @@
 		EA6BC6AE1DDD932100BCE63A /* DoubleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6BC6AD1DDD932100BCE63A /* DoubleMap.swift */; };
 		EA6BC6B11DDD9D3D00BCE63A /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */; };
 		EA6BC6B41DDD9D6E00BCE63A /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6BC6B31DDD9D6E00BCE63A /* routes.json */; };
+		EA6BC6B91DDDA12D00BCE63A /* ObjectMapper+SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6BC6B81DDDA12D00BCE63A /* ObjectMapper+SignalProducer.swift */; };
 		EA7397331DDC40960028527E /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = EA7397321DDC40960028527E /* points.json */; };
 		EA7397371DDC461B0028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
 		EA7397381DDC46340028527E /* Cleanse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7397361DDC461B0028527E /* Cleanse.framework */; };
@@ -66,9 +67,11 @@
 /* Begin PBXFileReference section */
 		15E7F7D424E2845E90019CBA /* Pods-Partybus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partybus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partybus/Pods-Partybus.debug.xcconfig"; sourceTree = "<group>"; };
 		27A146DFF05234416CF9F31E /* Pods-PartybusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartybusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartybusTests/Pods-PartybusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EE07AE660524F350A550E58 /* Pods-Partybus.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partybus.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Partybus/Pods-Partybus.staging.xcconfig"; sourceTree = "<group>"; };
 		8C99472D28FC6F5CC5591996 /* Pods_Partybus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Partybus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B632484A28FF32EA3F125FE8 /* Pods-Partybus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partybus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Partybus/Pods-Partybus.release.xcconfig"; sourceTree = "<group>"; };
 		D6960A71687DB49FA5ADB683 /* Pods-PartybusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartybusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartybusTests/Pods-PartybusTests.release.xcconfig"; sourceTree = "<group>"; };
+		DB4D25F261BA902BAF185855 /* Pods-PartybusTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartybusTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-PartybusTests/Pods-PartybusTests.staging.xcconfig"; sourceTree = "<group>"; };
 		E911497632C289F114A24AC5 /* Pods_PartybusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartybusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0E03741DDC1E3200003BB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "View Controllers/MapViewController.swift"; sourceTree = "<group>"; };
 		EA0E03751DDC1E3200003BB3 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = "View Controllers/MapViewController.xib"; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		EA6BC6AD1DDD932100BCE63A /* DoubleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleMap.swift; path = Networking/Targets/DoubleMap.swift; sourceTree = "<group>"; };
 		EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Providers.swift; path = Networking/Providers.swift; sourceTree = "<group>"; };
 		EA6BC6B31DDD9D6E00BCE63A /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = "Networking/Stubbed Responses/routes.json"; sourceTree = "<group>"; };
+		EA6BC6B81DDDA12D00BCE63A /* ObjectMapper+SignalProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ObjectMapper+SignalProducer.swift"; path = "Extensions/ObjectMapper+SignalProducer.swift"; sourceTree = "<group>"; };
 		EA7397321DDC40960028527E /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = points.json; path = PartybusTests/Resources/points.json; sourceTree = SOURCE_ROOT; };
 		EA7397361DDC461B0028527E /* Cleanse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cleanse.framework; path = Frameworks/Cleanse.framework; sourceTree = "<group>"; };
 		EAE0983A1DDC1CDE007A1065 /* Partybus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partybus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +135,8 @@
 				B632484A28FF32EA3F125FE8 /* Pods-Partybus.release.xcconfig */,
 				27A146DFF05234416CF9F31E /* Pods-PartybusTests.debug.xcconfig */,
 				D6960A71687DB49FA5ADB683 /* Pods-PartybusTests.release.xcconfig */,
+				3EE07AE660524F350A550E58 /* Pods-Partybus.staging.xcconfig */,
+				DB4D25F261BA902BAF185855 /* Pods-PartybusTests.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 		EA1968A61DDC5AFC00C2F95C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA6BC6B81DDDA12D00BCE63A /* ObjectMapper+SignalProducer.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +548,7 @@
 				EA0E03831DDC250700003BB3 /* WindowModule.swift in Sources */,
 				EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */,
 				EA0E038D1DDC25D300003BB3 /* AppDelegate.swift in Sources */,
+				EA6BC6B91DDDA12D00BCE63A /* ObjectMapper+SignalProducer.swift in Sources */,
 				EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */,
 				EA0E03891DDC257000003BB3 /* BaseCoordinator.swift in Sources */,
 			);
@@ -631,7 +639,7 @@
 		};
 		EA6BC6B61DDD9E8300BCE63A /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15E7F7D424E2845E90019CBA /* Pods-Partybus.debug.xcconfig */;
+			baseConfigurationReference = 3EE07AE660524F350A550E58 /* Pods-Partybus.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -652,7 +660,7 @@
 		};
 		EA6BC6B71DDD9E8300BCE63A /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27A146DFF05234416CF9F31E /* Pods-PartybusTests.debug.xcconfig */;
+			baseConfigurationReference = DB4D25F261BA902BAF185855 /* Pods-PartybusTests.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
