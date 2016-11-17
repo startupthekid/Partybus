@@ -8,13 +8,11 @@ target 'Partybus' do
   pod 'Mapbox-iOS-SDK'
   pod 'RxSwift'
   pod 'SnapKit'
-  pod 'Alamofire'
-  pod 'RxAlamofire'
   pod 'ObjectMapper'
-  pod 'AlamofireObjectMapper'
   pod 'RxSugar'
   pod 'RxCocoa'
-  pod 'Alamofire'
+  pod 'Moya'
+  pod 'Moya/Rx'
 
   # Pods for Partybus
 
