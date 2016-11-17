@@ -14,6 +14,8 @@ target 'Partybus' do
   pod 'ReactiveSwift', '1.0.0-alpha.3'
   pod 'Moya-ObjectMapper'
 
+  pod 'Swinject', '2.0.0-beta.2'
+
   # Pods for Partybus
 
   target 'PartybusTests' do
