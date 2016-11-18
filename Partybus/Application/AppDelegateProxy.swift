@@ -31,7 +31,7 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
             .inObjectScope(.hierarchy)
         container.register(ApplicationProtocol.self) { _ in UIApplication.shared }
         container.register(CoordinatorProtocol.self) { r in AppCoordinator(window: r.resolve(UIWindow.self)) }
-        container.register(AppDelegate.self) { r in
+        container.register(UIApplicationDelegate.self) { r in
             AppDelegate(window: r.resolve(UIWindow.self), application: r.resolve(ApplicationProtocol.self)!, coordinator: r.resolve(CoordinatorProtocol.self)!)
         }
             .inObjectScope(.hierarchy)
@@ -39,7 +39,7 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        applicationDelegate = container.resolve(AppDelegate.self)
+        applicationDelegate = container.resolve(UIApplicationDelegate.self) as? AppDelegate
         return applicationDelegate?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? true
     }
 
