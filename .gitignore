@@ -4,3 +4,5 @@ Pods/*
 Carthage/*
 fastlane/metadata/**
 fastlane/screenshots/**
+/fastlane/report.xml
+/fastlane/test_output/report.junit
