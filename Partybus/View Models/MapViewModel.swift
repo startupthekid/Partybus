@@ -10,7 +10,8 @@ import Foundation
 import ReactiveSwift
 
 // TODO: Rename this entire class cluster: https://trello.com/b/mY9VZ8Qw/ios
-struct MapViewModel {
+
+struct MapViewModel: MapViewModelProtocol {
 
     let routes = MutableProperty<[Route]>([])
 
