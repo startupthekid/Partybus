@@ -4,5 +4,6 @@ podfile: Podfile
 cache: cocoapods
 before_install:
 - gem install fastlane
+- pod repo update
 script:
 - fastlane test
