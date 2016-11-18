@@ -12,7 +12,7 @@ class AppCoordinator: BaseCoordinator {
 
     // MARK: - Window
 
-    private let window: UIWindow
+    private let window: UIWindow?
 
     // MARK: - Coordinators
 
@@ -20,11 +20,11 @@ class AppCoordinator: BaseCoordinator {
 
     // MARK: - Initializer
 
-    required init(window: UIWindow) {
+    required init(window: UIWindow?) {
         self.window = window
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
-        window.rootViewController = navigationController
+        window?.rootViewController = navigationController
 
         mapCoordinator = MapCoordinator(rootViewController: navigationController)
         super.init(rootViewController: navigationController)
@@ -38,7 +38,7 @@ class AppCoordinator: BaseCoordinator {
 
     override func start(_ completion: CoordinatorCompletion?) {
         startChild(mapCoordinator, withIdentifier: "MapCoordinator", completion: nil)
-        window.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
         super.start(completion)
     }
     

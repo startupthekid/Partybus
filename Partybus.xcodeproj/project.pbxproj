@@ -193,6 +193,13 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		EA5ED57D1DDECDA200A752AA /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Dependency Injection";
+			sourceTree = "<group>";
+		};
 		EA6BC6AC1DDD92EF00BCE63A /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +248,7 @@
 		EAE0983C1DDC1CDE007A1065 /* Partybus */ = {
 			isa = PBXGroup;
 			children = (
+				EA5ED57D1DDECDA200A752AA /* Dependency Injection */,
 				EA1968AC1DDC6BFB00C2F95C /* Networking */,
 				EA1968A91DDC68D100C2F95C /* View Models */,
 				EA1968A61DDC5AFC00C2F95C /* Extensions */,

@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import Swinject
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let application: ApplicationProtocol
-    let coordinator: AppCoordinator
+    let coordinator: CoordinatorProtocol
 
-    init(window: UIWindow, application: ApplicationProtocol) {
+    init(window: UIWindow?, application: ApplicationProtocol, coordinator: CoordinatorProtocol) {
         self.window = window
         self.application = application
-        coordinator = AppCoordinator(window: window)
+        self.coordinator = coordinator
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

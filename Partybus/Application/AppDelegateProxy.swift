@@ -19,15 +19,22 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
     override init() {
         container = Container()
         super.init()
-        container.register(UIWindow.self, factory: { _ in
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = UINavigationController()
+
+        // Register dependencies
+        container.register(UINavigationController.self) { _ in UINavigationController() }
+        container.register(UIScreen.self) { _ in UIScreen.main }
+        container.register(UIWindow.self, factory: { resolver in
+            let window = UIWindow(frame: resolver.resolve(UIScreen.self)!.bounds)
+            window.rootViewController = resolver.resolve(UINavigationController.self)
             return window
         })
-        .inObjectScope(.container)
-
+            .inObjectScope(.hierarchy)
         container.register(ApplicationProtocol.self) { _ in UIApplication.shared }
-        container.register(AppDelegate.self) { r in AppDelegate(window: r.resolve(UIWindow.self)!, application: r.resolve(ApplicationProtocol.self)!) }.inObjectScope(.container)
+        container.register(CoordinatorProtocol.self) { r in AppCoordinator(window: r.resolve(UIWindow.self)) }
+        container.register(AppDelegate.self) { r in
+            AppDelegate(window: r.resolve(UIWindow.self), application: r.resolve(ApplicationProtocol.self)!, coordinator: r.resolve(CoordinatorProtocol.self)!)
+        }
+            .inObjectScope(.hierarchy)
 
     }
 
