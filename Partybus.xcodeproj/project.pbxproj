@@ -625,7 +625,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DStaging\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -764,7 +764,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDebug\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -784,7 +784,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DRelease\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
