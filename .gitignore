@@ -2,3 +2,5 @@ Pods/*
 *.lock
 *.xcuserstate
 Carthage/*
+fastlane/metadata/**
+fastlane/screenshots/**
