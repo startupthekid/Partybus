@@ -25,6 +25,7 @@
 		EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */; };
 		EA1968B01DDCC50D00C2F95C /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AF1DDCC50D00C2F95C /* Bus.swift */; };
 		EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968B11DDCC66E00C2F95C /* Stop.swift */; };
+		EA5ED57F1DDED44600A752AA /* MapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5ED57E1DDED44600A752AA /* MapViewModelProtocol.swift */; };
 		EA6BC6AE1DDD932100BCE63A /* DoubleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6BC6AD1DDD932100BCE63A /* DoubleMap.swift */; };
 		EA6BC6B11DDD9D3D00BCE63A /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */; };
 		EA6BC6B41DDD9D6E00BCE63A /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6BC6B31DDD9D6E00BCE63A /* routes.json */; };
@@ -71,6 +72,7 @@
 		EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "View Models/MapViewModel.swift"; sourceTree = "<group>"; };
 		EA1968AF1DDCC50D00C2F95C /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bus.swift; path = Models/Bus.swift; sourceTree = "<group>"; };
 		EA1968B11DDCC66E00C2F95C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Models/Stop.swift; sourceTree = "<group>"; };
+		EA5ED57E1DDED44600A752AA /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModelProtocol.swift; path = "View Models/MapViewModelProtocol.swift"; sourceTree = "<group>"; };
 		EA6BC6AD1DDD932100BCE63A /* DoubleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleMap.swift; path = Networking/Targets/DoubleMap.swift; sourceTree = "<group>"; };
 		EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Providers.swift; path = Networking/Providers.swift; sourceTree = "<group>"; };
 		EA6BC6B31DDD9D6E00BCE63A /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = "Networking/Stubbed Responses/routes.json"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */,
+				EA5ED57E1DDED44600A752AA /* MapViewModelProtocol.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -191,6 +194,13 @@
 				EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		EA5ED57D1DDECDA200A752AA /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Dependency Injection";
 			sourceTree = "<group>";
 		};
 		EA6BC6AC1DDD92EF00BCE63A /* Targets */ = {
@@ -241,6 +251,7 @@
 		EAE0983C1DDC1CDE007A1065 /* Partybus */ = {
 			isa = PBXGroup;
 			children = (
+				EA5ED57D1DDECDA200A752AA /* Dependency Injection */,
 				EA1968AC1DDC6BFB00C2F95C /* Networking */,
 				EA1968A91DDC68D100C2F95C /* View Models */,
 				EA1968A61DDC5AFC00C2F95C /* Extensions */,
@@ -498,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */,
+				EA5ED57F1DDED44600A752AA /* MapViewModelProtocol.swift in Sources */,
 				EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */,
 				EA0E03871DDC256100003BB3 /* CoordinatorProtocol.swift in Sources */,
 				EA6BC6AE1DDD932100BCE63A /* DoubleMap.swift in Sources */,
@@ -605,15 +617,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DStaging\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -627,11 +636,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PartybusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.PartybusTests;
@@ -745,15 +750,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDebug\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -765,15 +767,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DRelease\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.Partybus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -787,11 +786,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PartybusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.PartybusTests;
@@ -810,11 +805,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PartybusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.PartybusTests;

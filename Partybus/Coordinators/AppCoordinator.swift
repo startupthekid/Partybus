@@ -7,26 +7,33 @@
 //
 
 import UIKit
+import Swinject
 
 class AppCoordinator: BaseCoordinator {
 
     // MARK: - Window
 
-    private let window: UIWindow
+    private let window: UIWindow?
+
+    // MARK: - Dependency Injection
+
+    private let container = Container { c in
+        c.register(UINavigationController.self) { _ in UINavigationController() }
+        c.register(MapCoordinator.self) { resolver in MapCoordinator(rootViewController: resolver.resolve(UINavigationController.self)!) }
+    }
 
     // MARK: - Coordinators
 
-    private let mapCoordinator: MapCoordinator
+    private let coordinator: MapCoordinator?
 
     // MARK: - Initializer
 
-    required init(window: UIWindow) {
+    required init(window: UIWindow?) {
         self.window = window
-        let navigationController = UINavigationController()
+        coordinator = container.resolve(MapCoordinator.self)
+        let navigationController = coordinator?.rootViewController as? UINavigationController ?? UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
-        window.rootViewController = navigationController
-
-        mapCoordinator = MapCoordinator(rootViewController: navigationController)
+        window?.rootViewController = navigationController
         super.init(rootViewController: navigationController)
     }
 
@@ -37,8 +44,9 @@ class AppCoordinator: BaseCoordinator {
     // MARK: - Coordinator Protocol
 
     override func start(_ completion: CoordinatorCompletion?) {
-        startChild(mapCoordinator, withIdentifier: "MapCoordinator", completion: nil)
-        window.makeKeyAndVisible()
+        guard let coordinator = coordinator else { fatalError("failed to dependency inject the coordinator") }
+        startChild(coordinator, withIdentifier: coordinator.identifier, completion: nil)
+        window?.makeKeyAndVisible()
         super.start(completion)
     }
     
