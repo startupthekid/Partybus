@@ -637,7 +637,6 @@
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = PartybusTests/Info.plist;
@@ -797,7 +796,6 @@
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = PartybusTests/Info.plist;
@@ -820,7 +818,6 @@
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = PartybusTests/Info.plist;
