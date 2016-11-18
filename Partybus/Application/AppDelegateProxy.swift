@@ -7,23 +7,33 @@
 //
 
 import UIKit
-import Cleanse
+import Swinject
 
 @UIApplicationMain
 class AppDelegateProxy: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
     var applicationDelegate: AppDelegate?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let propertyInjector = try! ComponentFactory.of(AppDelegateProxy.Component.self).build()
-        propertyInjector.injectProperties(into: self)
-        return applicationDelegate?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? true
+    let container: Container
+
+    override init() {
+        container = Container()
+        super.init()
+        container.register(UIWindow.self, factory: { _ in
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = UINavigationController()
+            return window
+        })
+        .inObjectScope(.container)
+
+        container.register(ApplicationProtocol.self) { _ in UIApplication.shared }
+        container.register(AppDelegate.self) { r in AppDelegate(window: r.resolve(UIWindow.self)!, application: r.resolve(ApplicationProtocol.self)!) }.inObjectScope(.container)
+
     }
 
-    func injectProperties(_ window: UIWindow, delegate: AppDelegate) {
-        self.window = window
-        applicationDelegate = delegate
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        applicationDelegate = container.resolve(AppDelegate.self)
+        return applicationDelegate?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? true
     }
 
     // MARK: - UIResponder
@@ -42,21 +52,6 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         applicationDelegate?.touchesCancelled(touches, with: event)
-    }
-
-}
-
-extension AppDelegateProxy {
-
-    struct Component: Cleanse.RootComponent {
-        
-        typealias Root = PropertyInjector<AppDelegateProxy>
-
-        static func configure<B: Binder>(binder: B) {
-            binder.install(module: ApplicationModule.self)
-            binder.bindPropertyInjectionOf(AppDelegateProxy.self).to(injector: AppDelegateProxy.injectProperties)
-        }
-
     }
 
 }
