@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='PartybusTests.xctest' tests='3' failures='0'>
+  <testsuite name='PartybusTests.CoordinatesTransformSpec' tests='2' failures='0'>
+    <testcase classname='PartybusTests.CoordinatesTransformSpec' name='CoordinatesTransform__should_transform_a_list_of_points_into_tuple_coordinate_pairs' time='0.005'/>
+    <testcase classname='PartybusTests.CoordinatesTransformSpec' name='CoordinatesTransform__should_not_transform_into_json' time='0.001'/>
+  </testsuite>
+  <testsuite name='PartybusTests.RouteSpec' tests='1' failures='0'>
+    <testcase classname='PartybusTests.RouteSpec' name='Route__should_transform_a_json_object_into_a_route_object' time='0.001'/>
+  </testsuite>
+</testsuites>
