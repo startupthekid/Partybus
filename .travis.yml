@@ -3,7 +3,6 @@ language: objective-c
 podfile: Podfile
 cache: cocoapods
 before_install:
-- gem install cocoapods
-- pod install
+- gem install fastlane
 script:
-- set -o pipefail && xcodebuild test -workspace Partybus.xcworkspace -scheme Partybus -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s" ONLY_ACTIVE_ARCH=NO | xcpretty
+- fastlane test
