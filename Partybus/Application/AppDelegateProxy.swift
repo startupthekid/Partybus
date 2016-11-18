@@ -12,7 +12,6 @@ import Swinject
 @UIApplicationMain
 class AppDelegateProxy: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
     var applicationDelegate: AppDelegate?
 
     let container: Container
@@ -33,7 +32,6 @@ class AppDelegateProxy: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = container.resolve(UIWindow.self)
         applicationDelegate = container.resolve(AppDelegate.self)
         return applicationDelegate?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? true
     }
