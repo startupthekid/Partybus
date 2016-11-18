@@ -1,0 +1,5 @@
+scheme "Partybus"
+clean true
+code_coverage true
+device "iPhone 6s (10.1)"
+skip_slack true
