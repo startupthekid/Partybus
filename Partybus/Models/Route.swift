@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct Route: ImmutableMappable {
 
-    let identifier: String
+    let identifier: Int
     let name: String
     let shortName: String
     let description: String
@@ -21,12 +21,12 @@ struct Route: ImmutableMappable {
     let stops: [Int]
 
     init(map: Map) throws {
-        identifier = try map.value("id", using: TransformOf(fromJSON: { "\($0)" }, toJSON: { Int($0 ?? "") }))
+        identifier = try map.value("id")
         name = try map.value("name")
         shortName = try map.value("short_name")
         description = try map.value("description")
         color = try map.value("color")
-        scheduleURI = try map.value("schedule")
+        scheduleURI = try map.value("schedule_url")
         active = try map.value("active")
         path = try map.value("path", using: CoordinatesTransform())
         stops = try map.value("stops")
