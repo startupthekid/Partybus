@@ -8,3 +8,4 @@ fastlane/screenshots/**
 /fastlane/test_output/report.junit
 /fastlane/test_output/report.html
 /build
+/fastlane/.env.development
