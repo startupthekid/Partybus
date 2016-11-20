@@ -12,6 +12,7 @@ import ReactiveSwift
 import Moya_ObjectMapper
 import Moya
 import Swinject
+import SwinjectAutoregistration
 
 class MapCoordinator: BaseCoordinator {
 
@@ -22,8 +23,8 @@ class MapCoordinator: BaseCoordinator {
     // MARK: - Dependency Injection
 
     private let container = Container { c in
-        c.register(DispatchQueue.self) { _ in DispatchQueue.global(qos: .utility) }
-        c.register(MapViewModelProtocol.self) { _ in MapViewModel() }
+        c.autoregister(DispatchQueue.self, argument: DispatchQoS.QoSClass.self, initializer: DispatchQueue.global(qos:))
+        c.autoregister(MapViewModelProtocol.self, initializer: MapViewModel.init)
     }
 
     // MARK: - View Model
@@ -38,13 +39,14 @@ class MapCoordinator: BaseCoordinator {
 
     private struct Constants {
         static let QueueKey = "com.swoopystudios.partybus.network.api"
+        static let RefreshInterval: Double = 60
     }
 
     // MARK: - Initialization
 
     required init(rootViewController: UIViewController) {
         mainMapViewController = rootViewController as? MapViewController
-        utilityQueue = container.resolve(DispatchQueue.self)
+        utilityQueue = container.resolve(DispatchQueue.self, argument: DispatchQoS.QoSClass.utility)
         viewModel = container.resolve(MapViewModelProtocol.self)!
         super.init(rootViewController: rootViewController)
     }
@@ -53,6 +55,7 @@ class MapCoordinator: BaseCoordinator {
         guard let controller = mainMapViewController else { return }
         viewModel.routes <~ fetchRoutes().flatMapError { _ in .empty }
         viewModel.stops <~ fetchStops().flatMapError { _ in .empty }
+        viewModel.buses <~ fetchBuses().flatMapError { _ in .empty }
         controller.stopAnnotations <~ viewModel.stopAnnotations
         controller.routePolylines <~ viewModel.routePolylines
         super.start(completion)
@@ -79,12 +82,14 @@ class MapCoordinator: BaseCoordinator {
     }
 
     private func fetchBuses() -> SignalProducer<[Bus], Moya.Error> {
-        return Providers.DoubleMapProvider
+        let scheduler = QueueScheduler(qos: .utility, name: "\(Constants.QueueKey).buses", targeting: utilityQueue)
+        let producer =  Providers.DoubleMapProvider
             .request(token: .buses)
             .mapArray(Bus.self)
-            .start(on: QueueScheduler(qos: .utility, name: "\(Constants.QueueKey).buses", targeting: utilityQueue))
-            .take(first: 1)
+            .start(on: scheduler)
             .retry(upTo: 3)
+        return producer.concat(timer(interval: Constants.RefreshInterval, on: scheduler)
+            .flatMap(.latest) { _ in producer })
     }
 
 }
