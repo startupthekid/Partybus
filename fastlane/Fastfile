@@ -29,6 +29,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    cert
+    sigh(adhoc: true)
     increment_build_number
     gym(scheme: 'Partybus Release')
     crashlytics
