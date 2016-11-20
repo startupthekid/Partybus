@@ -47,6 +47,9 @@ extension DoubleMap: TargetType {
         case .routes:
             guard let path = Bundle.main.path(forResource: "routes", ofType: "json") else { return Data() }
             return try! Data(contentsOf: URL(fileURLWithPath: path))
+        case .stops:
+            guard let path = Bundle.main.path(forResource: "stops", ofType: "json") else { return Data() }
+            return try! Data(contentsOf: URL(fileURLWithPath: path))
         default: return Data()
         }
     }
