@@ -10,6 +10,7 @@ import Foundation
 import Quick
 import Nimble
 import ObjectMapper
+import ReactiveSwift
 @testable import Partybus
 
 class RouteSpec: QuickSpec {
@@ -18,20 +19,13 @@ class RouteSpec: QuickSpec {
 
         describe("Route") {
 
-            var json: [String: Any] = [:]
-
-            beforeEach {
-                do {
-                    let resourcePath = URL(fileURLWithPath: Bundle(for: type(of: self)).path(forResource: "route", ofType: "json")!)
-                    let data = try Data(contentsOf: resourcePath, options: [.mappedIfSafe])
-                    json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] ?? [:]
-                } catch {
-                    fail("unable to parse json file route.json. failed with error: \(error)")
-                }
-            }
-
-            it("should transform a json object into a route object") {
-                expect { try Route(JSON: json) as ImmutableMappable }.toNot(throwError())
+            it("should map stubbed json into a list of routes") {
+                var routes: [Route] = []
+                let producer = TestProviders.StubbedDoubleMapProvider.request(token: .routes).mapArray(Route.self).on(value: {
+                    routes = $0
+                })
+                producer.start()
+                expect(routes).toEventuallyNot(beEmpty())
             }
 
         }

@@ -1,0 +1,21 @@
+ [{
+  "id": 2,
+  "name": "2",
+  "lat": 42.40988,
+  "lon": -71.12279,
+  "heading": 198,
+  "route": 4,
+  "lastStop": 5,
+  "fields": {},
+  "lastUpdate": 1479666108
+  }, {
+  "id": 39,
+  "name": "992",
+  "lat": 42.39745,
+  "lon": -71.12183,
+  "heading": 228,
+  "route": 4,
+  "lastStop": 1,
+  "fields": {},
+  "lastUpdate": 1479666104
+  }]

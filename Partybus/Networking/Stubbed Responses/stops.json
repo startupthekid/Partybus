@@ -1,0 +1,193 @@
+[{
+	"id": 28,
+	"name": "96 Packard Ave",
+	"description": "IGL - The Institute for Global Leadership at Tufts University",
+	"lat": 42.405286,
+	"lon": -71.122956,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 30,
+	"name": "Logan Airport",
+	"description": "Logan Airport",
+	"lat": 42.366535,
+	"lon": -71.021118,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 31,
+	"name": "Hall of Flags",
+	"description": "Main Entrance, Fletcher School",
+	"lat": 42.407563,
+	"lon": -71.121401,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 29,
+	"name": "Hyatt Place",
+	"description": "Hyatt Place Hotel, Medford MA",
+	"lat": 42.416138,
+	"lon": -71.103478,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 10,
+	"name": "Halligan \/ Sports Center",
+	"description": "Sports Center and Halligan",
+	"lat": 42.408745,
+	"lon": -71.114792,
+	"buddy": 0,
+	"fields": {}
+}, {
+	"id": 12,
+	"name": "Aidekman Arts Center Depart",
+	"description": "Aidekman Arts Center Depart",
+	"lat": 42.404716,
+	"lon": -71.118584,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 15,
+	"name": "Stop and Shop",
+	"description": "",
+	"lat": 42.40863,
+	"lon": -71.086182,
+	"buddy": 0,
+	"fields": {}
+}, {
+	"id": 13,
+	"name": "NEC - New England Conservatory ",
+	"description": "",
+	"lat": 42.341266,
+	"lon": -71.086119,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 14,
+	"name": "SMFA - School Museum of Fine Arts",
+	"description": "",
+	"lat": 42.338824,
+	"lon": -71.096944,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 20,
+	"name": "Cousens",
+	"description": "",
+	"lat": 42.409367,
+	"lon": -71.11451,
+	"buddy": 0,
+	"fields": {}
+}, {
+	"id": 32,
+	"name": "Whole Foods",
+	"description": "",
+	"lat": 42.417346,
+	"lon": -71.126647,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 23,
+	"name": "Cousens Gym",
+	"description": "",
+	"lat": 42.408737,
+	"lon": -71.114777,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 21,
+	"name": "Ellis Oval",
+	"description": "",
+	"lat": 42.403767,
+	"lon": -71.117172,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 26,
+	"name": "574 Boston Ave",
+	"description": "574 Boston Ave",
+	"lat": 42.403947,
+	"lon": -71.114384,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 24,
+	"name": "J Field",
+	"description": "",
+	"lat": 42.401752,
+	"lon": -71.118042,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 2,
+	"name": "Davis Square",
+	"description": "",
+	"lat": 42.396786,
+	"lon": -71.12262,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 3,
+	"name": "T.A.B",
+	"description": "",
+	"lat": 42.401134,
+	"lon": -71.126076,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 16,
+	"name": "Lewis Hall",
+	"description": "",
+	"lat": 42.404922,
+	"lon": -71.123131,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 22,
+	"name": "The Green",
+	"description": "",
+	"lat": 42.408138,
+	"lon": -71.120949,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 17,
+	"name": "51 Winthrop",
+	"description": "",
+	"lat": 42.411385,
+	"lon": -71.12188,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 18,
+	"name": "Eliot Pearson",
+	"description": "",
+	"lat": 42.410103,
+	"lon": -71.113914,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 25,
+	"name": "80 George",
+	"description": "80 George",
+	"lat": 42.411813,
+	"lon": -71.115167,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 1,
+	"name": "Campus Center Front",
+	"description": "",
+	"lat": 42.405804,
+	"lon": -71.11956,
+	"buddy": null,
+	"fields": {}
+}, {
+	"id": 6,
+	"name": "Olin Hall",
+	"description": "",
+	"lat": 42.407639,
+	"lon": -71.121262,
+	"buddy": null,
+	"fields": {}
+}]
