@@ -12,5 +12,9 @@ import ReactiveSwift
 protocol MapViewModelProtocol {
 
     var routes: MutableProperty<[Route]> { get }
-    
+    var stops: MutableProperty<[Stop]> { get }
+
+    var stopAnnotations: Property<[StopAnnotation]> { get }
+    var routePolylines: Property<[RoutePolyline]> { get }
+
 }
