@@ -8,6 +8,7 @@
 
 import UIKit
 import Swinject
+import SwinjectAutoregistration
 
 class AppCoordinator: BaseCoordinator {
 
@@ -18,21 +19,22 @@ class AppCoordinator: BaseCoordinator {
     // MARK: - Dependency Injection
 
     private let container = Container { c in
-        c.register(UINavigationController.self) { _ in UINavigationController() }
-        c.register(MapCoordinator.self) { resolver in MapCoordinator(rootViewController: resolver.resolve(UINavigationController.self)!) }
+        c.autoregister(MapViewAppearanceProviding.self, initializer: DefaultMapViewAppearanceProvider.init)
+        c.autoregister(UIViewController.self, initializer: MapViewController.init(appearanceProvider:))
+        c.autoregister(MapCoordinator.self, initializer: MapCoordinator.init(rootViewController:))
     }
 
     // MARK: - Coordinators
 
-    private let coordinator: MapCoordinator?
+    private let coordinator: MapCoordinator
 
     // MARK: - Initializer
 
     required init(window: UIWindow?) {
         self.window = window
-        coordinator = container.resolve(MapCoordinator.self)
-        let navigationController = coordinator?.rootViewController as? UINavigationController ?? UINavigationController()
-        navigationController.setNavigationBarHidden(true, animated: false)
+        coordinator = container.resolve(MapCoordinator.self)!
+        let navigationController = NavigationController(rootViewController: coordinator.rootViewController)
+        navigationController.setNavigationBar(hidden: true, animated: false)
         window?.rootViewController = navigationController
         super.init(rootViewController: navigationController)
     }
@@ -44,7 +46,6 @@ class AppCoordinator: BaseCoordinator {
     // MARK: - Coordinator Protocol
 
     override func start(_ completion: CoordinatorCompletion?) {
-        guard let coordinator = coordinator else { fatalError("failed to dependency inject the coordinator") }
         startChild(coordinator, withIdentifier: coordinator.identifier, completion: nil)
         window?.makeKeyAndVisible()
         super.start(completion)
