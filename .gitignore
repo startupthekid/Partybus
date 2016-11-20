@@ -7,3 +7,4 @@ fastlane/screenshots/**
 /fastlane/report.xml
 /fastlane/test_output/report.junit
 /fastlane/test_output/report.html
+/build
