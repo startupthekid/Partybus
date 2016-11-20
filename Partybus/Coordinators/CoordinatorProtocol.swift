@@ -85,10 +85,14 @@ extension CoordinatorProtocol {
             self?.childCoordinators.remove(at: index)
             completion?(coordinator)
         }
+        stopAllChildren(with: completion)
     }
 
     func stopAllChildren(with completion: CoordinatorCompletion? = nil) {
-        childCoordinators.forEach { $0.1.stop(nil) }
+        childCoordinators.forEach {
+            $0.1.stop(completion)
+            $0.1.stopAllChildren(with: completion)
+        }
         childCoordinators.removeAll()
     }
 
