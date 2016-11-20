@@ -691,6 +691,7 @@
 			baseConfigurationReference = 3EE07AE660524F350A550E58 /* Pods-Partybus.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
@@ -700,6 +701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Staging;
 		};
@@ -824,6 +826,7 @@
 			baseConfigurationReference = 15E7F7D424E2845E90019CBA /* Pods-Partybus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
@@ -833,6 +836,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -841,6 +845,7 @@
 			baseConfigurationReference = B632484A28FF32EA3F125FE8 /* Pods-Partybus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 8959XVXX2J;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partybus/Info.plist;
@@ -850,6 +855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.partybus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
