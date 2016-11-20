@@ -8,6 +8,8 @@
 
 import UIKit
 import Swinject
+import Fabric
+import Crashlytics
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.application = application
         self.coordinator = coordinator
+        super.init()
+        Fabric.with([Crashlytics.self])
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
