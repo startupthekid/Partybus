@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
 
     let stopAnnotations = MutableProperty<[StopAnnotation]>([])
     let routePolylines = MutableProperty<[RoutePolyline]>([])
+    let busAnnotations = MutableProperty<[BusAnnotation]>([])
 
     // MARK: - Appearance
 
@@ -62,7 +63,7 @@ class MapViewController: UIViewController {
     private func configureBindings() {
         stopAnnotations.producer.on(value: { [weak self] annotations in
             guard let vSelf = self else { return }
-            vSelf.mapView.removeAnnotations(vSelf.mapView.annotations ?? [])
+//            vSelf.mapView.removeAnnotations(vSelf.mapView.annotations ?? [])
             vSelf.mapView.addAnnotations(annotations)
             let camera = MGLMapCamera(lookingAtCenter: annotations.first?.coordinate ?? CLLocationCoordinate2D(latitude: 42, longitude: -71), fromDistance: 2500, pitch: 0, heading: 0)
             vSelf.mapView.setCamera(camera, animated: false)
@@ -73,6 +74,13 @@ class MapViewController: UIViewController {
             guard let vSelf = self else { return }
             vSelf.mapView.remove(polylines)
             vSelf.mapView.add(polylines)
+        })
+            .start()
+
+        busAnnotations.producer.on(value: { [weak self] annotations in
+            guard let vSelf = self else { return }
+//            vSelf.mapView.removeAnnotations(vSelf.mapView.annotations ?? [])
+            vSelf.mapView.addAnnotations(annotations)
         })
             .start()
 
