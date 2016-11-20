@@ -21,6 +21,9 @@
 		EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */; };
 		EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */; };
 		EA1155441DE19ABF00C50A71 /* TestProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1155431DE19ABF00C50A71 /* TestProviders.swift */; };
+		EA1155481DE21F7A00C50A71 /* BusAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1155471DE21F7A00C50A71 /* BusAnnotation.swift */; };
+		EA11554A1DE2215200C50A71 /* buses.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1155491DE2215200C50A71 /* buses.json */; };
+		EA11554C1DE2222400C50A71 /* BusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11554B1DE2222400C50A71 /* BusSpec.swift */; };
 		EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */; };
 		EA1968A51DDC526600C2F95C /* route.json in Resources */ = {isa = PBXBuildFile; fileRef = EA1968A41DDC526600C2F95C /* route.json */; };
 		EA1968AB1DDC691C00C2F95C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */; };
@@ -76,6 +79,9 @@
 		EA0E03941DDC39B500003BB3 /* CoordinatesTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinatesTransform.swift; path = Models/CoordinatesTransform.swift; sourceTree = "<group>"; };
 		EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesTransformSpec.swift; sourceTree = "<group>"; };
 		EA1155431DE19ABF00C50A71 /* TestProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProviders.swift; sourceTree = "<group>"; };
+		EA1155471DE21F7A00C50A71 /* BusAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusAnnotation.swift; path = Mapbox/BusAnnotation.swift; sourceTree = "<group>"; };
+		EA1155491DE2215200C50A71 /* buses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = buses.json; path = "Networking/Stubbed Responses/buses.json"; sourceTree = "<group>"; };
+		EA11554B1DE2222400C50A71 /* BusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusSpec.swift; sourceTree = "<group>"; };
 		EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSpec.swift; sourceTree = "<group>"; };
 		EA1968A41DDC526600C2F95C /* route.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = route.json; path = Resources/route.json; sourceTree = "<group>"; };
 		EA1968AA1DDC691C00C2F95C /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = "View Models/MapViewModel.swift"; sourceTree = "<group>"; };
@@ -85,7 +91,6 @@
 		EA484EB91DE051B800A46653 /* UIColor+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Convenience.swift"; path = "Extensions/UIColor+Convenience.swift"; sourceTree = "<group>"; };
 		EA484EBB1DE0520E00A46653 /* UIView+Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Query.swift"; path = "Extensions/UIView+Query.swift"; sourceTree = "<group>"; };
 		EA484EBE1DE052C200A46653 /* MapViewAppearanceProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewAppearanceProviding.swift; path = "Mapbox/Appearance Providers/MapViewAppearanceProviding.swift"; sourceTree = "<group>"; };
-		EA484EC21DE060DC00A46653 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		EA5ED57E1DDED44600A752AA /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewModelProtocol.swift; path = "View Models/MapViewModelProtocol.swift"; sourceTree = "<group>"; };
 		EA6BC6AD1DDD932100BCE63A /* DoubleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleMap.swift; path = Networking/Targets/DoubleMap.swift; sourceTree = "<group>"; };
 		EA6BC6B01DDD9D3D00BCE63A /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Providers.swift; path = Networking/Providers.swift; sourceTree = "<group>"; };
@@ -183,6 +188,7 @@
 			children = (
 				EA0E03971DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift */,
 				EA1968A21DDC4DF100C2F95C /* RouteSpec.swift */,
+				EA11554B1DE2222400C50A71 /* BusSpec.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 			children = (
 				EA6BC6B31DDD9D6E00BCE63A /* routes.json */,
 				EAE6BC791DDF71430004D9D1 /* stops.json */,
+				EA1155491DE2215200C50A71 /* buses.json */,
 			);
 			name = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -292,7 +299,6 @@
 				EAE098441DDC1CDE007A1065 /* Assets.xcassets */,
 				EAE098461DDC1CDE007A1065 /* LaunchScreen.storyboard */,
 				EAE098491DDC1CDE007A1065 /* Info.plist */,
-				EA484EC21DE060DC00A46653 /* MyPlayground.playground */,
 			);
 			path = Partybus;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				EA484EBD1DE052AA00A46653 /* Apperance Providers */,
 				EAE6BC7C1DDF71E30004D9D1 /* StopAnnotation.swift */,
 				EA484EB21DE04F1200A46653 /* RoutePolyline.swift */,
+				EA1155471DE21F7A00C50A71 /* BusAnnotation.swift */,
 			);
 			name = Mapbox;
 			sourceTree = "<group>";
@@ -421,6 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA11554A1DE2215200C50A71 /* buses.json in Resources */,
 				EA6BC6B41DDD9D6E00BCE63A /* routes.json in Resources */,
 				EAE098481DDC1CDE007A1065 /* LaunchScreen.storyboard in Resources */,
 				EAE098451DDC1CDE007A1065 /* Assets.xcassets in Resources */,
@@ -569,6 +577,7 @@
 				EA0E03951DDC39B500003BB3 /* CoordinatesTransform.swift in Sources */,
 				EA484EB31DE04F1200A46653 /* RoutePolyline.swift in Sources */,
 				EA484EBC1DE0520E00A46653 /* UIView+Query.swift in Sources */,
+				EA1155481DE21F7A00C50A71 /* BusAnnotation.swift in Sources */,
 				EA5ED57F1DDED44600A752AA /* MapViewModelProtocol.swift in Sources */,
 				EA1968B21DDCC66E00C2F95C /* Stop.swift in Sources */,
 				EA0E03871DDC256100003BB3 /* CoordinatorProtocol.swift in Sources */,
@@ -597,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1968A31DDC4DF100C2F95C /* RouteSpec.swift in Sources */,
+				EA11554C1DE2222400C50A71 /* BusSpec.swift in Sources */,
 				EA1155441DE19ABF00C50A71 /* TestProviders.swift in Sources */,
 				EA0E03981DDC3BEA00003BB3 /* CoordinatesTransformSpec.swift in Sources */,
 			);
