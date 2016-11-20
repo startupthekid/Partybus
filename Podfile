@@ -14,11 +14,13 @@ target 'Partybus' do
   pod 'ReactiveSwift', '1.0.0-alpha.3'
   pod 'Moya-ObjectMapper', '2.1'
   pod 'Swinject', '2.0.0-beta.2'
-
-  # Pods for Partybus
+  pod 'SwinjectAutoregistration', :git => 'https://github.com/Swinject/SwinjectAutoregistration.git', :branch => 'release2.0'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'PartybusTests' do
     inherit! :search_paths
+    pod 'Mapbox-iOS-SDK', '3.3.7'
     pod 'Quick', '0.10.0'
     pod 'Nimble', '5.1.1'
   end
