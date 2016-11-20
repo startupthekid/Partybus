@@ -18,10 +18,10 @@ class MapCoordinator: BaseCoordinator {
     // MARK: - Controllers
 
     private let mainMapViewController: MapViewController?
+
     // MARK: - Dependency Injection
 
     private let container = Container { c in
-        c.register(MapViewController.self) { _ in MapViewController() }
         c.register(DispatchQueue.self) { _ in DispatchQueue.global(qos: .utility) }
         c.register(MapViewModelProtocol.self) { _ in MapViewModel() }
     }
@@ -34,21 +34,27 @@ class MapCoordinator: BaseCoordinator {
 
     let utilityQueue: DispatchQueue?
 
+    // MARK: - Constants
+
+    private struct Constants {
+        static let QueueKey = "com.swoopystudios.partybus.network.api"
+    }
+
     // MARK: - Initialization
 
     required init(rootViewController: UIViewController) {
-        mainMapViewController = container.resolve(MapViewController.self)
+        mainMapViewController = rootViewController as? MapViewController
         utilityQueue = container.resolve(DispatchQueue.self)
         viewModel = container.resolve(MapViewModelProtocol.self)!
         super.init(rootViewController: rootViewController)
     }
 
     override func start(_ completion: CoordinatorCompletion?) {
-        guard let navigationController = rootViewController as? UINavigationController else { return }
-        guard let destinationController = mainMapViewController else { return }
-        destinationController.loadViewIfNeeded()
-        navigationController.setViewControllers([destinationController], animated: false)
+        guard let controller = mainMapViewController else { return }
         viewModel.routes <~ fetchRoutes().flatMapError { _ in .empty }
+        viewModel.stops <~ fetchStops().flatMapError { _ in .empty }
+        controller.stopAnnotations <~ viewModel.stopAnnotations
+        controller.routePolylines <~ viewModel.routePolylines
         super.start(completion)
     }
 
@@ -58,7 +64,27 @@ class MapCoordinator: BaseCoordinator {
         return Providers.DoubleMapProvider
             .request(token: .routes)
             .mapArray(Route.self)
-            .start(on: QueueScheduler(qos: .utility, name: "com.swoopystudios.partybus.network.api.routes", targeting: utilityQueue))
+            .start(on: QueueScheduler(qos: .utility, name: "\(Constants.QueueKey).routes", targeting: utilityQueue))
+            .take(first: 1)
+            .retry(upTo: 3)
+    }
+
+    private func fetchStops() -> SignalProducer<[Stop], Moya.Error> {
+        return Providers.DoubleMapProvider
+            .request(token: .stops)
+            .mapArray(Stop.self)
+            .start(on: QueueScheduler(qos: .utility, name: "\(Constants.QueueKey).stops", targeting: utilityQueue))
+            .take(first: 1)
+            .retry(upTo: 3)
+    }
+
+    private func fetchBuses() -> SignalProducer<[Bus], Moya.Error> {
+        return Providers.DoubleMapProvider
+            .request(token: .buses)
+            .mapArray(Bus.self)
+            .start(on: QueueScheduler(qos: .utility, name: "\(Constants.QueueKey).buses", targeting: utilityQueue))
+            .take(first: 1)
+            .retry(upTo: 3)
     }
 
 }
