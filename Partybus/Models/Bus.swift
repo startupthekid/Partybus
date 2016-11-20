@@ -8,20 +8,22 @@
 
 import ObjectMapper
 
-struct Bus: ImmutableMappable {
+public struct Bus: ImmutableMappable {
 
-    let identifier: String
+    let identifier: Int
     let latitude: Double
     let longitude: Double
+    let route: Int
     let header: Int
     let lastStop: Int
     let updatedAt: TimeInterval
 
-    init(map: Map) throws {
-        identifier = try map.value("id", using: TransformOf(fromJSON: { "\($0)" }, toJSON: { Int($0 ?? "") }))
+    public init(map: Map) throws {
+        identifier = try map.value("id")
         latitude = try map.value("lat")
         longitude = try map.value("lon")
-        header = try map.value("header")
+        route = try map.value("route")
+        header = try map.value("heading")
         lastStop = try map.value("lastStop")
         updatedAt = try map.value("lastUpdate")
     }
